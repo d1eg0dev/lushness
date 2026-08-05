@@ -1,0 +1,656 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lushness — Luxury Rentals & Experiences · Careyes, Mexico</title>
+<meta name="description" content="Curated luxury villas, destination weddings and wellness retreats in Costa Careyes, on the Pacific coast of Mexico.">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --main: #1a2e3a;
+  --secondary: #565555;
+  --bone: #F5F0E8;
+  --white: #FFFFFF;
+  --light: #E8E3DB;
+  --accent: #8B7355;
+  --text: #565555;
+  --text-light: #8a8a8a;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  color: var(--text);
+  background: var(--white);
+  -webkit-font-smoothing: antialiased;
+}
+
+img { display: block; }
+
+/* NAV */
+nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 100;
+  padding: 20px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: background 0.4s, backdrop-filter 0.4s;
+}
+nav.scrolled {
+  background: rgba(255,255,255,0.95);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--light);
+}
+.nav-logo {
+  font-family: 'Cinzel', serif;
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 5px;
+  color: var(--bone);
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: color 0.4s;
+}
+nav.scrolled .nav-logo { color: var(--main); }
+.nav-right { display: flex; gap: 30px; align-items: center; }
+.nav-links { display: flex; gap: 30px; align-items: center; }
+.nav-links a {
+  font-size: 11px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--bone);
+  opacity: 0.8;
+  transition: opacity 0.3s, color 0.4s;
+}
+nav.scrolled .nav-links a { color: var(--main); }
+.nav-links a:hover { opacity: 1; }
+
+.lang-toggle {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+  font-size: 10px;
+  letter-spacing: 2px;
+}
+.lang-toggle span {
+  cursor: pointer;
+  color: var(--bone);
+  opacity: 0.5;
+  transition: opacity 0.3s, color 0.4s;
+}
+nav.scrolled .lang-toggle span { color: var(--main); }
+.lang-toggle span.active { opacity: 1; font-weight: 600; }
+.lang-toggle .sep { opacity: 0.35; cursor: default; }
+
+/* MOBILE NAV TOGGLE */
+.nav-toggle {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+}
+.nav-toggle span {
+  width: 24px; height: 1.5px;
+  background: var(--bone);
+  transition: background 0.4s, transform 0.3s, opacity 0.3s;
+}
+nav.scrolled .nav-toggle span { background: var(--main); }
+
+.mobile-menu {
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  background: var(--main);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 34px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.4s;
+}
+.mobile-menu.open { opacity: 1; pointer-events: auto; }
+.mobile-menu a {
+  font-family: 'Cinzel', serif;
+  font-size: 18px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--bone);
+}
+.mobile-menu .lang-toggle span { color: var(--bone); font-size: 13px; }
+.mobile-close {
+  position: absolute;
+  top: 26px; right: 30px;
+  font-size: 26px;
+  color: var(--bone);
+  background: none; border: none; cursor: pointer;
+  line-height: 1;
+}
+
+/* HERO */
+.hero {
+  height: 100vh;
+  min-height: 560px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: var(--main);
+  position: relative;
+  overflow: hidden;
+}
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  width: 100%; height: 100%;
+  object-fit: cover;
+  z-index: 0;
+}
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(160deg, rgba(26,46,58,0.74) 0%, rgba(42,64,80,0.55) 45%, rgba(26,46,58,0.82) 100%);
+  z-index: 1;
+}
+.hero-content { position: relative; z-index: 2; text-align: center; padding: 0 20px; }
+.hero-line { width: 40px; height: 1px; background: var(--accent); margin: 0 auto 30px; }
+.hero h1 {
+  font-family: 'Cinzel', serif;
+  font-size: clamp(34px, 6vw, 60px);
+  font-weight: 500;
+  letter-spacing: 14px;
+  color: var(--bone);
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+.hero h1 span {
+  display: block;
+  font-size: clamp(12px, 2vw, 16px);
+  letter-spacing: 5px;
+  font-weight: 400;
+  color: var(--accent);
+  margin-top: 16px;
+}
+.hero-sub {
+  font-size: 11px;
+  letter-spacing: 4px;
+  color: rgba(245,240,232,0.6);
+  margin-top: 28px;
+  text-transform: uppercase;
+}
+.scroll-indicator {
+  position: absolute;
+  bottom: 40px; left: 50%;
+  transform: translateX(-50%);
+  display: flex; flex-direction: column; align-items: center; gap: 8px;
+  z-index: 2;
+}
+.scroll-indicator span {
+  font-size: 9px; letter-spacing: 3px;
+  color: rgba(245,240,232,0.4); text-transform: uppercase;
+}
+.scroll-line {
+  width: 1px; height: 40px;
+  background: linear-gradient(to bottom, var(--accent), transparent);
+  animation: scrollPulse 2s infinite;
+}
+@keyframes scrollPulse { 0%,100% { opacity: 0.3; } 50% { opacity: 1; } }
+
+/* SECTIONS */
+section {
+  padding: 110px 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.section-label {
+  font-family: 'Cinzel', serif;
+  font-size: 10px; letter-spacing: 4px;
+  color: var(--accent); text-transform: uppercase;
+  margin-bottom: 12px;
+}
+.section-title {
+  font-family: 'Cinzel', serif;
+  font-size: clamp(24px, 3.5vw, 38px);
+  font-weight: 400; color: var(--main);
+  letter-spacing: 2px; margin-bottom: 20px; line-height: 1.3;
+}
+.section-line { width: 40px; height: 1px; background: var(--accent); margin-bottom: 30px; }
+.section-text { font-size: 15px; line-height: 1.8; color: var(--text); max-width: 600px; }
+
+/* ABOUT / DESTINATION */
+.about-grid {
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  gap: 70px;
+  align-items: center;
+}
+.about-caption {
+  font-size: 10px; letter-spacing: 3px; text-transform: uppercase;
+  color: var(--text-light); margin-top: 30px;
+}
+.about-image {
+  position: relative;
+  overflow: hidden;
+  background: var(--main);
+  height: 520px;
+}
+.about-image .ph, .img-frame .ph {
+  position: absolute; inset: 0;
+  display: flex; align-items: center; justify-content: center;
+  font-family: 'Cinzel', serif; font-size: 11px; letter-spacing: 3px;
+  color: rgba(245,240,232,0.4); text-transform: uppercase;
+  text-align: center; padding: 16px;
+}
+.about-image img { position: relative; width: 100%; height: 100%; object-fit: cover; }
+
+/* PROPERTIES */
+.properties-section { background: var(--bone); padding: 110px 40px; }
+.properties-inner { max-width: 1200px; margin: 0 auto; }
+.properties-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  margin-top: 40px;
+}
+.property-card {
+  background: var(--white);
+  overflow: hidden;
+  transition: transform 0.35s;
+}
+.property-card:hover { transform: translateY(-5px); }
+.img-frame {
+  position: relative;
+  width: 100%;
+  height: 280px;
+  overflow: hidden;
+  background: var(--main);
+}
+.img-frame img { position: relative; width: 100%; height: 100%; object-fit: cover; }
+.img-frame::after {
+  content: '';
+  position: absolute; bottom: 0; left: 0; right: 0; height: 55%;
+  background: linear-gradient(transparent, rgba(26,46,58,0.35));
+  pointer-events: none;
+}
+.property-tag {
+  position: absolute; top: 16px; left: 16px;
+  font-size: 9px; letter-spacing: 2px; text-transform: uppercase;
+  padding: 5px 11px; z-index: 3;
+  background: var(--main); color: var(--bone);
+}
+.property-tag.sale { background: var(--accent); }
+.property-info { padding: 26px; }
+.property-name {
+  font-family: 'Cinzel', serif; font-size: 17px;
+  color: var(--main); letter-spacing: 1px; margin-bottom: 6px;
+}
+.property-location {
+  font-size: 11px; letter-spacing: 2px; color: var(--text-light);
+  text-transform: uppercase; margin-bottom: 14px;
+}
+.property-details { font-size: 13px; color: var(--text); line-height: 1.65; margin-bottom: 16px; }
+.property-price { font-family: 'Cinzel', serif; font-size: 14px; color: var(--main); letter-spacing: 1px; }
+
+/* EXPERIENCES / SERVICES */
+.experiences-section { max-width: 1200px; margin: 0 auto; padding: 110px 40px; }
+.service {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 64px;
+  align-items: center;
+}
+.service + .service { margin-top: 90px; }
+.service.reverse .service-media { order: 2; }
+.service-media {
+  position: relative;
+  overflow: hidden;
+  background: var(--main);
+  aspect-ratio: 4 / 3;
+}
+.service-media img { position: relative; width: 100%; height: 100%; object-fit: cover; }
+.service-eyebrow {
+  font-family: 'Cinzel', serif; font-size: 10px; letter-spacing: 3px;
+  color: var(--accent); text-transform: uppercase; margin-bottom: 12px;
+}
+.service-title {
+  font-family: 'Cinzel', serif; font-size: clamp(22px, 2.8vw, 30px);
+  font-weight: 400; color: var(--main); letter-spacing: 2px;
+  margin-bottom: 18px; line-height: 1.3;
+}
+.service-desc { font-size: 14.5px; line-height: 1.75; color: var(--text); margin-bottom: 10px; }
+.service-note {
+  font-size: 13px; font-style: italic; color: var(--accent);
+  line-height: 1.6; margin-bottom: 18px;
+}
+.service-pillars { list-style: none; display: grid; gap: 12px; margin-bottom: 26px; }
+.service-pillars li { position: relative; padding-left: 22px; font-size: 13.5px; line-height: 1.6; }
+.service-pillars li::before {
+  content: ''; position: absolute; left: 0; top: 9px;
+  width: 11px; height: 1px; background: var(--accent);
+}
+.pill-lead { color: var(--main); font-weight: 600; }
+.pill-body { color: var(--text); }
+.service-cta {
+  display: inline-block;
+  font-family: 'Cinzel', serif; font-size: 11px; letter-spacing: 3px;
+  text-transform: uppercase; color: var(--main);
+  text-decoration: none; padding-bottom: 6px;
+  border-bottom: 1px solid var(--accent);
+  transition: color 0.3s, border-color 0.3s;
+}
+.service-cta:hover { color: var(--accent); }
+
+/* CTA */
+.cta-section { background: var(--main); padding: 110px 40px; text-align: center; }
+.cta-section .section-title { color: var(--bone); }
+.cta-section .section-label { color: var(--accent); }
+.cta-text {
+  font-size: 15px; color: rgba(245,240,232,0.65);
+  max-width: 520px; margin: 0 auto 34px; line-height: 1.7;
+}
+.cta-button {
+  display: inline-block;
+  font-family: 'Cinzel', serif; font-size: 11px; letter-spacing: 4px;
+  text-transform: uppercase; color: var(--bone);
+  border: 1px solid var(--accent); padding: 15px 42px;
+  text-decoration: none; transition: background 0.3s, color 0.3s;
+}
+.cta-button:hover { background: var(--accent); color: var(--white); }
+.cta-contact {
+  margin-top: 28px; font-size: 12px; letter-spacing: 2px;
+  color: rgba(245,240,232,0.55);
+}
+.cta-contact a { color: rgba(245,240,232,0.75); text-decoration: none; }
+.cta-contact a:hover { color: var(--bone); }
+
+/* FOOTER */
+footer { padding: 46px 40px; text-align: center; border-top: 1px solid var(--light); }
+.footer-logo { font-family: 'Cinzel', serif; font-size: 13px; letter-spacing: 5px; color: var(--main); margin-bottom: 14px; }
+.footer-links { display: flex; justify-content: center; flex-wrap: wrap; gap: 22px; margin-bottom: 16px; }
+.footer-links a { font-size: 10px; letter-spacing: 2px; text-transform: uppercase; text-decoration: none; color: var(--text-light); }
+.footer-links a:hover { color: var(--main); }
+.footer-copy { font-size: 10px; letter-spacing: 1px; color: var(--text-light); }
+
+/* REVEAL */
+.reveal { opacity: 0; transform: translateY(18px); transition: opacity 0.8s ease, transform 0.8s ease; }
+.reveal.in { opacity: 1; transform: none; }
+
+/* MOBILE */
+@media (max-width: 860px) {
+  .about-grid { grid-template-columns: 1fr; gap: 40px; }
+  .about-image { height: 380px; }
+  .properties-grid { grid-template-columns: 1fr 1fr; }
+  .service { grid-template-columns: 1fr; gap: 30px; }
+  .service.reverse .service-media { order: 0; }
+}
+@media (max-width: 768px) {
+  nav { padding: 16px 22px; }
+  .nav-links { display: none; }
+  .nav-right > .lang-toggle { display: none; }
+  .nav-toggle { display: flex; }
+  section, .properties-section, .experiences-section, .cta-section { padding: 70px 22px; }
+  .properties-grid { grid-template-columns: 1fr; }
+  .img-frame { height: 240px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .reveal { opacity: 1; transform: none; transition: none; }
+  .scroll-line { animation: none; }
+  html { scroll-behavior: auto; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="nav">
+  <a href="#" class="nav-logo">Lushness</a>
+  <div class="nav-right">
+    <div class="nav-links">
+      <a href="#about" data-en="The Destination" data-es="El Destino">The Destination</a>
+      <a href="#properties" data-en="Properties" data-es="Propiedades">Properties</a>
+      <a href="#experiences" data-en="Experiences" data-es="Experiencias">Experiences</a>
+      <a href="#contact" data-en="Contact" data-es="Contacto">Contact</a>
+    </div>
+    <div class="lang-toggle">
+      <span data-lang="en" class="active">EN</span>
+      <span class="sep">/</span>
+      <span data-lang="es">ES</span>
+    </div>
+  </div>
+  <button class="nav-toggle" id="navToggle" aria-label="Open menu"><span></span><span></span></button>
+</nav>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobileMenu">
+  <button class="mobile-close" id="mobileClose" aria-label="Close menu">&times;</button>
+  <a href="#about" data-en="The Destination" data-es="El Destino">The Destination</a>
+  <a href="#properties" data-en="Properties" data-es="Propiedades">Properties</a>
+  <a href="#experiences" data-en="Experiences" data-es="Experiencias">Experiences</a>
+  <a href="#contact" data-en="Contact" data-es="Contacto">Contact</a>
+  <div class="lang-toggle">
+    <span data-lang="en" class="active">EN</span>
+    <span class="sep">/</span>
+    <span data-lang="es">ES</span>
+  </div>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <img class="hero-bg" src="images/hero.jpg" alt="Costa Careyes coastline" onerror="this.style.display='none'">
+  <div class="hero-content">
+    <div class="hero-line"></div>
+    <h1>
+      Lushness
+      <span data-en="Luxury Rentals &amp; Experiences" data-es="Rentas de Lujo &amp; Experiencias">Luxury Rentals &amp; Experiences</span>
+    </h1>
+    <p class="hero-sub" data-en="Careyes · Jalisco · Pacific Coast of Mexico" data-es="Careyes · Jalisco · Costa del Pacífico">Careyes · Jalisco · Pacific Coast of Mexico</p>
+  </div>
+  <div class="scroll-indicator">
+    <span data-en="Explore" data-es="Explorar">Explore</span>
+    <div class="scroll-line"></div>
+  </div>
+</section>
+
+<!-- ABOUT / DESTINATION -->
+<section id="about">
+  <div class="about-grid">
+    <div class="reveal">
+      <p class="section-label" data-en="The Destination" data-es="El Destino">The Destination</p>
+      <h2 class="section-title" data-en="A place that whispers: come home to yourself." data-es="Un lugar que susurra: vuelve a ti.">A place that whispers: come home to yourself.</h2>
+      <div class="section-line"></div>
+      <p class="section-text" data-en="Lushness curates high-end villas and immersive local experiences in one of the most magical destinations on earth: Careyes, on the Pacific coast of Mexico. A hidden sanctuary of wild beauty and soulful stillness — where nature, art and mindful living meet pristine beaches and lush jungle." data-es="Lushness cura villas de alto nivel y experiencias locales inmersivas en uno de los destinos más mágicos del mundo: Careyes, en la costa del Pacífico de México. Un santuario escondido de belleza salvaje y quietud — donde la naturaleza, el arte y la vida consciente se encuentran con playas vírgenes y selva exuberante.">Lushness curates high-end villas and immersive local experiences in one of the most magical destinations on earth: Careyes, on the Pacific coast of Mexico. A hidden sanctuary of wild beauty and soulful stillness — where nature, art and mindful living meet pristine beaches and lush jungle.</p>
+      <p class="section-text" style="margin-top:16px;" data-en="One destination, done completely. Every villa and every experience meets a single standard: it must feel like arriving somewhere extraordinary." data-es="Un solo destino, hecho por completo. Cada villa y cada experiencia cumple un mismo estándar: debe sentirse como llegar a un lugar extraordinario.">One destination, done completely. Every villa and every experience meets a single standard: it must feel like arriving somewhere extraordinary.</p>
+      <p class="about-caption" data-en="Est. 2026 · Costa Careyes, Jalisco · Mexico" data-es="Desde 2026 · Costa Careyes, Jalisco · México">Est. 2026 · Costa Careyes, Jalisco · Mexico</p>
+    </div>
+    <div class="about-image reveal">
+      <span class="ph">Careyes</span>
+      <img src="images/about.jpg" alt="A villa above the Pacific in Careyes" onerror="this.style.display='none'">
+    </div>
+  </div>
+</section>
+
+<!-- PROPERTIES -->
+<div class="properties-section" id="properties">
+  <div class="properties-inner">
+    <p class="section-label reveal" data-en="Properties" data-es="Propiedades">Properties</p>
+    <h2 class="section-title reveal" data-en="The Collection" data-es="La Colección">The Collection</h2>
+    <div class="section-line reveal"></div>
+    <p class="section-text reveal" data-en="Rental and for sale — a small, hand-picked portfolio of villas in Costa Careyes." data-es="En renta y en venta — un portafolio pequeño y seleccionado de villas en Costa Careyes.">Rental and for sale — a small, hand-picked portfolio of villas in Costa Careyes.</p>
+
+    <div class="properties-grid">
+      <div class="property-card reveal">
+        <div class="img-frame">
+          <span class="property-tag sale" data-en="For Sale" data-es="En Venta">For Sale</span>
+          <span class="ph">Casita La Mandarina</span>
+          <img src="images/mandarina.jpg" alt="Casita La Mandarina, Careyes" onerror="this.style.display='none'">
+        </div>
+        <div class="property-info">
+          <h3 class="property-name">Casita La Mandarina</h3>
+          <p class="property-location">Careyes, Jalisco · Mexico</p>
+          <p class="property-details" data-en="Boutique oceanfront retreat with panoramic Pacific views. Fully furnished, currently operating as a vacation rental — a rare turnkey opportunity in Costa Careyes." data-es="Refugio boutique frente al mar con vistas panorámicas al Pacífico. Totalmente amueblada, hoy en operación como renta vacacional — una rara oportunidad llave en mano en Costa Careyes.">Boutique oceanfront retreat with panoramic Pacific views. Fully furnished, currently operating as a vacation rental — a rare turnkey opportunity in Costa Careyes.</p>
+          <p class="property-price" data-en="$1,200,000 USD · Sale" data-es="$1,200,000 USD · Venta">$1,200,000 USD · Sale</p>
+        </div>
+      </div>
+
+      <div class="property-card reveal">
+        <div class="img-frame">
+          <span class="property-tag" data-en="Rental &amp; Weddings" data-es="Renta &amp; Bodas">Rental &amp; Weddings</span>
+          <span class="ph">Casa La Ceiba</span>
+          <img src="images/ceiba.jpg" alt="Casa La Ceiba, Careyes" onerror="this.style.display='none'">
+        </div>
+        <div class="property-info">
+          <h3 class="property-name">Casa La Ceiba</h3>
+          <p class="property-location">Careyes, Jalisco · Mexico</p>
+          <p class="property-details" data-en="A private oceanfront estate between jungle and sea. Infinity views, full staff and absolute privacy. Home to our destination weddings, hosting up to 18 guests." data-es="Finca privada frente al mar, entre selva y mar. Vistas infinitas, staff completo y privacidad absoluta. Sede de nuestras bodas destino, hasta 18 huéspedes.">A private oceanfront estate between jungle and sea. Infinity views, full staff and absolute privacy. Home to our destination weddings, hosting up to 18 guests.</p>
+          <p class="property-price" data-en="Vacation Rental · Events" data-es="Renta Vacacional · Eventos">Vacation Rental · Events</p>
+        </div>
+      </div>
+
+      <div class="property-card reveal">
+        <div class="img-frame">
+          <span class="property-tag" data-en="Vacation Rental" data-es="Renta Vacacional">Vacation Rental</span>
+          <span class="ph">Casa Tauro</span>
+          <img src="images/tauro.jpg" alt="Casa Tauro, Careyes" onerror="this.style.display='none'">
+        </div>
+        <div class="property-info">
+          <h3 class="property-name">Casa Tauro</h3>
+          <p class="property-location">Careyes, Jalisco · Mexico</p>
+          <p class="property-details" data-en="Exclusive oceanfront estate with radical privacy. Infinity pool, bespoke culinary experiences and a dedicated team. Rent the entire property." data-es="Finca exclusiva frente al mar con privacidad radical. Alberca infinity, experiencias culinarias a medida y equipo dedicado. Renta la propiedad completa.">Exclusive oceanfront estate with radical privacy. Infinity pool, bespoke culinary experiences and a dedicated team. Rent the entire property.</p>
+          <p class="property-price" data-en="Upon Request" data-es="Bajo Petición">Upon Request</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- EXPERIENCES / SERVICES -->
+<div class="experiences-section" id="experiences">
+  <p class="section-label reveal" data-en="Experiences" data-es="Experiencias">Experiences</p>
+  <h2 class="section-title reveal" data-en="Signature Experiences" data-es="Experiencias Insignia">Signature Experiences</h2>
+  <div class="section-line reveal"></div>
+  <p class="section-text reveal" style="margin-bottom:20px;" data-en="Two ways to bring people to Careyes — each designed, produced and run end to end by Lushness." data-es="Dos formas de reunir a las personas en Careyes — cada una diseñada, producida y operada de principio a fin por Lushness.">Two ways to bring people to Careyes — each designed, produced and run end to end by Lushness.</p>
+
+  <!-- WEDDINGS -->
+  <div class="service reveal">
+    <div class="service-media">
+      <span class="ph">Destination Weddings</span>
+      <img src="images/weddings.jpg" alt="A destination wedding at Casa La Ceiba, Careyes" onerror="this.style.display='none'">
+    </div>
+    <div class="service-body">
+      <p class="service-eyebrow" data-en="Full-service · Costa Careyes" data-es="Todo incluido · Costa Careyes">Full-service · Costa Careyes</p>
+      <h3 class="service-title" data-en="Destination Weddings" data-es="Bodas Destino">Destination Weddings</h3>
+      <p class="service-desc" data-en="A destination wedding produced from beginning to end — from an oceanfront villa in Careyes to the last toast of the after-party. We design and run every detail so you stay in the moment." data-es="Una boda destino producida de principio a fin — desde una villa frente al mar en Careyes hasta el último brindis del after. Diseñamos y operamos cada detalle para que solo vivan el momento.">A destination wedding produced from beginning to end — from an oceanfront villa in Careyes to the last toast of the after-party. We design and run every detail so you stay in the moment.</p>
+      <ul class="service-pillars">
+        <li><span class="pill-lead" data-en="Private oceanfront venue" data-es="Venue privado frente al mar">Private oceanfront venue</span><span class="pill-body" data-en=" — Casa La Ceiba, Costa Careyes. Hosts up to 18 guests; celebrations for 60." data-es=" — Casa La Ceiba, Costa Careyes. Aloja hasta 18 huéspedes; celebraciones para 60."> — Casa La Ceiba, Costa Careyes. Hosts up to 18 guests; celebrations for 60.</span></li>
+        <li><span class="pill-lead" data-en="Signature dining &amp; mixology" data-es="Gastronomía y coctelería de autor">Signature dining &amp; mixology</span><span class="pill-body" data-en=" — a four-course tasting menu and a craft cocktail bar by Chepe Parrilla de Barrio." data-es=" — cena de cuatro tiempos y barra artesanal por Chepe Parrilla de Barrio."> — a four-course tasting menu and a craft cocktail bar by Chepe Parrilla de Barrio.</span></li>
+        <li><span class="pill-lead" data-en="Floral design &amp; décor" data-es="Diseño floral &amp; decoración">Floral design &amp; décor</span><span class="pill-body" data-en=" — original seasonal arrangements, from ceremony to lounge." data-es=" — arreglos originales de temporada, de la ceremonia al lounge."> — original seasonal arrangements, from ceremony to lounge.</span></li>
+        <li><span class="pill-lead" data-en="Entertainment" data-es="Entretenimiento">Entertainment</span><span class="pill-body" data-en=" — DJ, lighting and d&amp;b audiotechnik sound, tuned to your soundtrack." data-es=" — DJ, iluminación y audio d&amp;b audiotechnik, a la medida de su música."> — DJ, lighting and d&amp;b audiotechnik sound, tuned to your soundtrack.</span></li>
+        <li><span class="pill-lead" data-en="Full coordination" data-es="Coordinación integral">Full coordination</span><span class="pill-body" data-en=" — Éterea x Lushness handle service, staging and logistics behind the scenes." data-es=" — Éterea x Lushness: servicio, montaje y logística detrás de cámaras."> — Éterea x Lushness handle service, staging and logistics behind the scenes.</span></li>
+        <li><span class="pill-lead" data-en="Before &amp; after" data-es="Experiencias previas &amp; posteriores">Before &amp; after</span><span class="pill-body" data-en=" — a welcome gathering and a beachside recovery-day at Casa Tauro." data-es=" — evento de bienvenida y torna-boda en la playa de Casa Tauro."> — a welcome gathering and a beachside recovery-day at Casa Tauro.</span></li>
+      </ul>
+      <a class="service-cta" href="mailto:diegolariosmejia@gmail.com?subject=Destination%20Wedding%20—%20Lushness" data-en="Request a proposal" data-es="Solicitar propuesta">Request a proposal</a>
+    </div>
+  </div>
+
+  <!-- WELLNESS RETREATS -->
+  <div class="service reverse reveal">
+    <div class="service-media">
+      <span class="ph">Wellness Retreats</span>
+      <img src="images/retreats.jpg" alt="A wellness retreat in Careyes" onerror="this.style.display='none'">
+    </div>
+    <div class="service-body">
+      <p class="service-eyebrow" data-en="Produced with wellness leaders · Careyes" data-es="Producidos con líderes de bienestar · Careyes">Produced with wellness leaders · Careyes</p>
+      <h3 class="service-title" data-en="Wellness Retreats" data-es="Retiros de Bienestar">Wellness Retreats</h3>
+      <p class="service-desc" data-en="We partner with wellness leaders to bring their retreat to Careyes — providing the villas, the hospitality and the full operation, while you lead the vision, the energy and the transformation." data-es="Nos asociamos con líderes de bienestar para llevar su retiro a Careyes — aportando las villas, la hospitalidad y toda la operación, mientras tú lideras la visión, la energía y la transformación.">We partner with wellness leaders to bring their retreat to Careyes — providing the villas, the hospitality and the full operation, while you lead the vision, the energy and the transformation.</p>
+      <p class="service-note" data-en="Careyes offers not only transformation — it offers visibility with meaning." data-es="Careyes no solo ofrece transformación — ofrece visibilidad con sentido.">Careyes offers not only transformation — it offers visibility with meaning.</p>
+      <ul class="service-pillars">
+        <li><span class="pill-lead" data-en="Premium villas" data-es="Villas premium">Premium villas</span><span class="pill-body" data-en=" — the base for your retreat, with room to gather and to rest." data-es=" — la base de tu retiro, con espacio para reunirse y descansar."> — the base for your retreat, with room to gather and to rest.</span></li>
+        <li><span class="pill-lead" data-en="Personalized hospitality" data-es="Hospitalidad personalizada">Personalized hospitality</span><span class="pill-body" data-en=" — chefs, drivers and a dedicated concierge." data-es=" — chefs, choferes y concierge dedicado."> — chefs, drivers and a dedicated concierge.</span></li>
+        <li><span class="pill-lead" data-en="Curated excursions" data-es="Excursiones curadas">Curated excursions</span><span class="pill-body" data-en=" — sailing, horseback riding and jungle hikes." data-es=" — navegar, cabalgatas y caminatas en la selva."> — sailing, horseback riding and jungle hikes.</span></li>
+        <li><span class="pill-lead" data-en="Seamless operations" data-es="Operación sin fricciones">Seamless operations</span><span class="pill-body" data-en=" — guest management handled end to end." data-es=" — gestión de huéspedes de principio a fin."> — guest management handled end to end.</span></li>
+        <li><span class="pill-lead" data-en="Sponsor &amp; brand logistics" data-es="Logística de marcas">Sponsor &amp; brand logistics</span><span class="pill-body" data-en=" — activations and partnerships, coordinated on the ground." data-es=" — activaciones y alianzas, coordinadas en sitio."> — activations and partnerships, coordinated on the ground.</span></li>
+        <li><span class="pill-lead" data-en="Content production" data-es="Producción de contenido">Content production</span><span class="pill-body" data-en=" — photo and video to carry your story beyond the retreat." data-es=" — foto y video para llevar tu historia más allá del retiro."> — photo and video to carry your story beyond the retreat.</span></li>
+      </ul>
+      <a class="service-cta" href="mailto:diegolariosmejia@gmail.com?subject=Wellness%20Retreat%20—%20Lushness" data-en="Co-create your retreat" data-es="Co-crear tu retiro">Co-create your retreat</a>
+    </div>
+  </div>
+</div>
+
+<!-- CTA / CONTACT -->
+<div class="cta-section" id="contact">
+  <p class="section-label" data-en="Contact" data-es="Contacto">Contact</p>
+  <h2 class="section-title" data-en="Let's create something beautiful together." data-es="Creemos algo hermoso juntos.">Let's create something beautiful together.</h2>
+  <div class="section-line" style="margin:0 auto 30px;"></div>
+  <p class="cta-text" data-en="Whether it's a villa, a wedding or a retreat in Careyes — tell us what you're imagining." data-es="Ya sea una villa, una boda o un retiro en Careyes — cuéntanos qué estás imaginando.">Whether it's a villa, a wedding or a retreat in Careyes — tell us what you're imagining.</p>
+  <a href="mailto:diegolariosmejia@gmail.com" class="cta-button" data-en="Get in touch" data-es="Contáctanos">Get in touch</a>
+  <p class="cta-contact">
+    Diego Larios · <a href="tel:+523123411693">+52 (312) 341 1693</a> · <a href="https://diegolarios.com" target="_blank" rel="noopener">diegolarios.com</a>
+  </p>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">LUSHNESS</div>
+  <div class="footer-links">
+    <a href="#about" data-en="The Destination" data-es="El Destino">The Destination</a>
+    <a href="#properties" data-en="Properties" data-es="Propiedades">Properties</a>
+    <a href="#experiences" data-en="Experiences" data-es="Experiencias">Experiences</a>
+    <a href="#contact" data-en="Contact" data-es="Contacto">Contact</a>
+  </div>
+  <p class="footer-copy" data-en="© 2026 Lushness · Luxury Rentals &amp; Experiences · Careyes, Mexico" data-es="© 2026 Lushness · Rentas de Lujo &amp; Experiencias · Careyes, México">© 2026 Lushness · Luxury Rentals &amp; Experiences · Careyes, Mexico</p>
+</footer>
+
+<script>
+// Nav scroll effect
+window.addEventListener('scroll', () => {
+  document.getElementById('nav').classList.toggle('scrolled', window.scrollY > 60);
+});
+
+// Language toggle
+function setLang(lang) {
+  document.documentElement.lang = lang;
+  document.querySelectorAll('[data-en]').forEach(el => {
+    const val = el.getAttribute('data-' + lang);
+    if (val !== null) el.textContent = val;
+  });
+  document.querySelectorAll('.lang-toggle span[data-lang]').forEach(s => {
+    s.classList.toggle('active', s.getAttribute('data-lang') === lang);
+  });
+}
+document.querySelectorAll('.lang-toggle span[data-lang]').forEach(s => {
+  s.addEventListener('click', () => setLang(s.getAttribute('data-lang')));
+});
+
+// Mobile menu
+const menu = document.getElementById('mobileMenu');
+document.getElementById('navToggle').addEventListener('click', () => menu.classList.add('open'));
+document.getElementById('mobileClose').addEventListener('click', () => menu.classList.remove('open'));
+menu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => menu.classList.remove('open')));
+
+// Scroll reveal
+const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+if (!prefersReduced && 'IntersectionObserver' in window) {
+  const obs = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); obs.unobserve(e.target); } });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+} else {
+  document.querySelectorAll('.reveal').forEach(el => el.classList.add('in'));
+}
+</script>
+
+</body>
+</html>
