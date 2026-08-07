@@ -77,6 +77,11 @@ nav.scrolled .nav-toggle span { background: var(--main); }
   display: flex; flex-direction: column; justify-content: center; align-items: center;
   background: var(--main); position: relative; overflow: hidden;
 }
+.hero::before {
+  content: ''; position: absolute; inset: 0; z-index: 1;
+  background: linear-gradient(to bottom, rgba(0,0,0,0.15) 0%, rgba(0,0,0,0.28) 55%, rgba(0,0,0,0.45) 100%);
+}
+.hero-mobile { display: none; }
 .hero-bg { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: 0; }
 .hero-content { position: relative; z-index: 2; text-align: center; padding: 0 20px; }
 .hero-line { width: 40px; height: 1px; background: var(--accent); margin: 0 auto 30px; }
@@ -84,7 +89,7 @@ nav.scrolled .nav-toggle span { background: var(--main); }
   font-family: 'Cinzel', serif; font-size: clamp(34px, 6vw, 60px); font-weight: 500;
   letter-spacing: 14px; color: var(--bone); text-transform: uppercase; margin-bottom: 8px;
 }
-.hero h1 span { display: block; font-size: clamp(12px, 2vw, 16px); letter-spacing: 5px; font-weight: 400; color: var(--accent); margin-top: 16px; }
+.hero h1 span { display: block; font-size: clamp(12px, 2vw, 16px); letter-spacing: 5px; font-weight: 400; color: var(--bone); margin-top: 16px; }
 .hero-sub { font-size: 11px; letter-spacing: 4px; color: rgba(245,240,232,0.6); margin-top: 28px; text-transform: uppercase; }
 .scroll-indicator { position: absolute; bottom: 40px; left: 50%; transform: translateX(-50%); display: flex; flex-direction: column; align-items: center; gap: 8px; z-index: 2; }
 .scroll-indicator span { font-size: 9px; letter-spacing: 3px; color: rgba(245,240,232,0.4); text-transform: uppercase; }
@@ -192,6 +197,8 @@ footer { padding: 46px 40px; text-align: center; border-top: 1px solid var(--lig
   .nav-links { display: none; }
   .nav-right > .lang-toggle { display: none; }
   .nav-toggle { display: flex; }
+  .hero-desktop { display: none; }
+  .hero-mobile { display: block; }
   section, .properties-section, .experiences-section, .cta-section, .destinations-section { padding: 70px 22px; }
   .swipe-hint { display: block; }
   .properties-grid { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; gap: 16px; margin-top: 26px; padding-bottom: 10px; -webkit-overflow-scrolling: touch; scrollbar-width: none; }
@@ -237,8 +244,12 @@ footer { padding: 46px 40px; text-align: center; border-top: 1px solid var(--lig
 
 <!-- HERO -->
 <section class="hero">
-  <img class="hero-bg" src="images/hero.jpg" alt="Costa Careyes coastline" onerror="this.style.display='none'">
-  <div class="hero-content">
+  <video class="hero-bg hero-desktop" autoplay muted loop playsinline preload="auto" poster="images/hero.jpg">
+    <source src="images/hero.mp4" type="video/mp4">
+  </video>
+  <video class="hero-bg hero-mobile" autoplay muted loop playsinline preload="auto" poster="images/hero.jpg">
+    <source src="images/hero-mobile.mp4" type="video/mp4">
+  </video>  <div class="hero-content">
     <div class="hero-line"></div>
     <h1>Lushness<span data-en="Luxury Rentals &amp; Experiences" data-es="Rentas de Lujo &amp; Experiencias">Luxury Rentals &amp; Experiences</span></h1>
     <p class="hero-sub" data-en="Mexico · Europe · Asia — curated by request" data-es="México · Europa · Asia — curado a la medida">Mexico · Europe · Asia — curated by request</p>
@@ -386,7 +397,7 @@ footer { padding: 46px 40px; text-align: center; border-top: 1px solid var(--lig
         <li><span class="pill-lead" data-en="Before &amp; after" data-es="Antes &amp; después">Before &amp; after</span><span class="pill-body" data-en=" — welcome gatherings and beachside recovery days." data-es=" — eventos de bienvenida y torna-bodas en la playa."> — welcome gatherings and beachside recovery days.</span></li>
         <li><span class="pill-lead" data-en="Bespoke, always" data-es="Siempre a la medida">Bespoke, always</span><span class="pill-body" data-en=" — every vendor and detail curated for you, nothing off-the-shelf." data-es=" — cada proveedor y detalle curado para ti, nada de catálogo."> — every vendor and detail curated for you, nothing off-the-shelf.</span></li>
       </ul>
-      <a class="service-cta" href="mailto:diegolariosmejia@gmail.com?subject=Wedding%20or%20Private%20Event%20—%20Lushness" data-en="Plan your event" data-es="Planea tu evento">Plan your event</a>
+      <a class="service-cta" href="mailto:lushnessluxuryrentals@gmail.com?subject=Wedding%20or%20Private%20Event%20—%20Lushness" data-en="Plan your event" data-es="Planea tu evento">Plan your event</a>
     </div>
   </div>
 
@@ -406,7 +417,7 @@ footer { padding: 46px 40px; text-align: center; border-top: 1px solid var(--lig
         <li><span class="pill-lead" data-en="Any retreat, wellness at heart" data-es="Cualquier retiro, con el wellness al centro">Any retreat, wellness at heart</span><span class="pill-body" data-en=" — yoga, breathwork, brand offsites or creative residencies." data-es=" — yoga, respiración, offsites de marca o residencias creativas."> — yoga, breathwork, brand offsites or creative residencies.</span></li>
         <li><span class="pill-lead" data-en="Production on request" data-es="Producción bajo petición">Production on request</span><span class="pill-body" data-en=" — content, sponsors and activations when you want them." data-es=" — contenido, patrocinios y activaciones cuando los quieras."> — content, sponsors and activations when you want them.</span></li>
       </ul>
-      <a class="service-cta" href="mailto:diegolariosmejia@gmail.com?subject=Retreat%20—%20Lushness" data-en="Activate your retreat" data-es="Activa tu retiro">Activate your retreat</a>
+      <a class="service-cta" href="mailto:lushnessluxuryrentals@gmail.com?subject=Retreat%20—%20Lushness" data-en="Activate your retreat" data-es="Activa tu retiro">Activate your retreat</a>
     </div>
   </div>
 </div>
@@ -464,8 +475,8 @@ footer { padding: 46px 40px; text-align: center; border-top: 1px solid var(--lig
   <h2 class="section-title" data-en="Let's create something beautiful together." data-es="Creemos algo hermoso juntos.">Let's create something beautiful together.</h2>
   <div class="section-line" style="margin:0 auto 30px;"></div>
   <p class="cta-text" data-en="A villa, a wedding, a retreat — in Careyes or anywhere you're imagining. Tell us where to begin." data-es="Una villa, una boda, un retiro — en Careyes o donde lo imagines. Dinos por dónde empezar.">A villa, a wedding, a retreat — in Careyes or anywhere you're imagining. Tell us where to begin.</p>
-  <a href="mailto:diegolariosmejia@gmail.com" class="cta-button" data-en="Get in touch" data-es="Contáctanos">Get in touch</a>
-  <p class="cta-contact">Diego Larios · <a href="tel:+523123411693">+52 (312) 341 1693</a> · <a href="https://diegolarios.com" target="_blank" rel="noopener">diegolarios.com</a></p>
+  <a href="mailto:lushnessluxuryrentals@gmail.com" class="cta-button" data-en="Get in touch" data-es="Contáctanos">Get in touch</a>
+  <p class="cta-contact">Diego Larios · <a href="https://wa.me/523151300013" target="_blank" rel="noopener">WhatsApp +52 315 130 0013</a> · <a href="https://diegolarios.com" target="_blank" rel="noopener">diegolarios.com</a></p>
 </div>
 
 <!-- FOOTER -->
