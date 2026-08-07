@@ -525,6 +525,15 @@ if (!prefersReduced && 'IntersectionObserver' in window) {
   document.querySelectorAll('.reveal').forEach(el => el.classList.add('in'));
 }
 </script>
-
+<script>
+document.querySelectorAll('.hero-bg').forEach(v => {
+  v.muted = true;
+  v.setAttribute('muted', '');
+  const go = () => v.play().catch(() => {});
+  go();
+  document.addEventListener('touchstart', go, { once: true });
+  document.addEventListener('click', go, { once: true });
+});
+</script>
 </body>
 </html>
