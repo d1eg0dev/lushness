@@ -72,14 +72,12 @@ nav.scrolled .nav-toggle span { background: var(--main); }
 /* HERO */
 .hero {
   height: 100vh; min-height: 560px;
+  max-width: none;
+  width: 100vw;
   display: flex; flex-direction: column; justify-content: center; align-items: center;
   background: var(--main); position: relative; overflow: hidden;
 }
 .hero-bg { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: 0; }
-.hero::before {
-  content: ''; position: absolute; inset: 0; z-index: 1;
-  background: linear-gradient(160deg, rgba(26,46,58,0.74) 0%, rgba(42,64,80,0.55) 45%, rgba(26,46,58,0.82) 100%);
-}
 .hero-content { position: relative; z-index: 2; text-align: center; padding: 0 20px; }
 .hero-line { width: 40px; height: 1px; background: var(--accent); margin: 0 auto 30px; }
 .hero h1 {
@@ -309,7 +307,7 @@ footer { padding: 46px 40px; text-align: center; border-top: 1px solid var(--lig
 
       <div class="property-card">
         <div class="img-frame">
-          <span class="property-tag" data-en="Vacation Rental" data-es="Renta Vacacional">Vacation Rental</span>
+        <span class="property-tag" data-en="Rental &amp; Weddings" data-es="Renta &amp; Bodas">Rental &amp; Weddings</span>          
           <span class="ph">Casa Tauro</span>
           <img src="images/tauro.jpg" alt="Casa Tauro, Careyes" onerror="this.style.display='none'">
         </div>
@@ -317,8 +315,7 @@ footer { padding: 46px 40px; text-align: center; border-top: 1px solid var(--lig
           <h3 class="property-name">Casa Tauro</h3>
           <p class="property-location">Careyes, Jalisco · Mexico</p>
           <p class="property-details" data-en="Exclusive oceanfront estate with radical privacy. Infinity pool, bespoke culinary experiences and a dedicated team. Rent the entire property." data-es="Finca exclusiva frente al mar con privacidad radical. Alberca infinity, experiencias culinarias a medida y equipo dedicado. Renta la propiedad completa.">Exclusive oceanfront estate with radical privacy. Infinity pool, bespoke culinary experiences and a dedicated team. Rent the entire property.</p>
-          <p class="property-price" data-en="Upon Request" data-es="Bajo Petición">Upon Request</p>
-        </div>
+          <p class="property-price" data-en="Rental &amp; Weddings · Upon Request" data-es="Renta &amp; Bodas · Bajo Petición">Rental &amp; Weddings · Upon Request</p>        </div>
       </div>
 
       <div class="property-card">
