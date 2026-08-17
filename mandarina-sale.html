@@ -82,10 +82,16 @@
 
   /* GALLERY */
   .gal{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:44px}
-  .gal figure{overflow:hidden;aspect-ratio:3/2;background:var(--hair)}
-  .gal img{height:100%;object-fit:cover;transition:transform 1.1s cubic-bezier(.2,.7,.3,1)}
+  .gal figure{overflow:hidden;aspect-ratio:3/2;background:var(--hair);margin:0}
+  .gal img{width:100%;height:100%;object-fit:cover;display:block;transition:transform 1.1s cubic-bezier(.2,.7,.3,1)}
   .gal figure:hover img{transform:scale(1.05)}
-  .gal .wide{grid-column:span 2;aspect-ratio:3/1}
+  
+  @media(max-width:900px){
+    .gal{grid-template-columns:1fr 1fr;gap:10px}
+  }
+  @media(max-width:560px){
+    .gal{grid-template-columns:1fr}
+  }
 
   /* NOTE */
   .note{border-left:2px solid var(--mandarina);padding:4px 0 4px 26px;margin-top:28px}
@@ -119,8 +125,6 @@
     .split{grid-template-columns:1fr;gap:38px}
     .turnkey{grid-template-columns:1fr}
     .figures{grid-template-columns:1fr;gap:32px}
-    .gal{grid-template-columns:1fr 1fr}
-    .gal .wide{grid-column:span 2}
   }
   @media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}.gal img{transition:none}}
 </style>
@@ -163,7 +167,7 @@
 <section class="band">
   <div class="wrap reveal">
     <span class="eyebrow" data-en="The Opportunity" data-es="La Oportunidad">The Opportunity</span>
-    <h2 data-en="A residence inside Careyes rarely reaches the market." data-es="Una residencia dentro de Careyes rara vez llega al mercado.">A residence inside Careyes rarely reaches the market.</h2>
+    <h2 data-en="A residence inside Careyes rarely reaches the market." data-es="Una residencia dentro de Careyes rara vez llega al mercado.">A residence inside Careyes<br>rarely reaches the market.</h2>
     <p class="lede" data-en="Casita La Mandarina sits within Casitas de las Flores — the cluster of colour-washed hillside residences that has defined the Careyes silhouette since Gian Franco Brignone founded the community in 1968." data-es="Casita La Mandarina forma parte de Casitas de las Flores — el conjunto de residencias de colores sobre la ladera que ha definido la silueta de Careyes desde que Gian Franco Brignone fundó la comunidad en 1968.">Casita La Mandarina sits within Casitas de las Flores — the cluster of colour-washed hillside residences that has defined the Careyes silhouette since Gian Franco Brignone founded the community in 1968.</p>
     <p class="body-text" style="margin-top:24px" data-en="Two bedrooms, each with its own bathroom. Terracotta and rose-washed walls, hand-finished floors, an open kitchen, and living spaces that end in a terrace facing the Pacific with nothing in between." data-es="Dos recámaras, cada una con su propio baño. Muros en tonos terracota y rosa, pisos de acabado artesanal, cocina abierta y espacios de estar que terminan en una terraza frente al Pacífico, sin nada en medio.">Two bedrooms, each with its own bathroom. Terracotta and rose-washed walls, hand-finished floors, an open kitchen, and living spaces that end in a terrace facing the Pacific with nothing in between.</p>
     <p class="body-text" data-en="It is sold fully furnished and fully equipped, and it currently operates as a vacation rental with its own brand, website and booking system already in place. The buyer inherits a functioning residence, not a project." data-es="Se entrega completamente amueblada y equipada, y actualmente opera como renta vacacional con marca, sitio web y sistema de reservas propios. El comprador no hereda un proyecto: hereda una residencia funcionando.">It is sold fully furnished and fully equipped, and it currently operates as a vacation rental with its own brand, website and booking system already in place. The buyer inherits a functioning residence, not a project.</p>
@@ -280,10 +284,8 @@
       <figure><img loading="lazy" src="images/06-living-room.jpg" alt="Living room with built-in seating"></figure>
       <figure><img loading="lazy" src="images/04-main-bedroom-wide.jpg" alt="Main bedroom"></figure>
       <figure><img loading="lazy" src="images/09-second-bedroom.jpg" alt="Second bedroom with two single beds"></figure>
-      <figure><img loading="lazy" src="images/10-second-bedroom-wide.jpg" alt="Second bedroom and lounge"></figure>
       <figure><img loading="lazy" src="images/11-kitchen.jpg" alt="Kitchen"></figure>
       <figure><img loading="lazy" src="images/12-bathroom-main.jpg" alt="Main bathroom"></figure>
-      <figure><img loading="lazy" src="images/13-bathroom-second.jpg" alt="Second bathroom"></figure>
       <figure><img loading="lazy" src="images/07-interior-night.jpg" alt="Interior at night"></figure>
       <figure><img loading="lazy" src="images/08-dining-jungle.jpg" alt="Dining area facing the jungle"></figure>
       <figure><img loading="lazy" src="images/14-exterior-entry.jpg" alt="Entrance to the casita"></figure>
