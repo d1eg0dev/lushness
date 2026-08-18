@@ -56,6 +56,23 @@ nav.scrolled .lang-toggle span { color: var(--main); }
 .lang-toggle span.active { opacity: 1; font-weight: 600; }
 .lang-toggle .sep { opacity: 0.35; cursor: default; }
 
+.signup{background:var(--ink);color:#fff;padding:96px 0;text-align:center}
+.signup .eyebrow{color:var(--mandarina)}
+.signup h2{color:#fff}
+.signup .lede{color:rgba(255,255,255,.78);margin:0 auto;max-width:52ch}
+.signup-form{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:40px}
+.signup-form input[type=email]{background:transparent;border:1px solid rgba(255,255,255,.4);color:#fff;
+  padding:16px 20px;font-size:15px;width:340px;max-width:100%;font-family:var(--body)}
+.signup-form input[type=email]::placeholder{color:rgba(255,255,255,.45)}
+.signup-form input[type=email]:focus{outline:none;border-color:var(--mandarina)}
+.signup-form button{background:var(--mandarina);color:#fff;border:none;cursor:pointer;
+  padding:16px 40px;font-size:11px;letter-spacing:.22em;text-transform:uppercase;
+  font-weight:700;font-family:var(--body);transition:background .3s}
+.signup-form button:hover{background:#c9662f}
+.signup-form .hp{position:absolute;left:-9999px;width:1px;height:1px;opacity:0}
+.signup .fineprint{margin-top:20px;font-size:12.5px;color:rgba(255,255,255,.5)}
+@media(max-width:560px){.signup-form input[type=email],.signup-form button{width:100%}}
+
 .nav-toggle { display: none; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; padding: 4px; }
 .nav-toggle span { width: 24px; height: 1.5px; background: var(--bone); transition: background 0.4s; }
 nav.scrolled .nav-toggle span { background: var(--main); }
@@ -383,6 +400,25 @@ footer { padding: 46px 40px; text-align: center; border-top: 1px solid var(--lig
     </div>
   </div>
 </div>
+
+<!-- NEWSLETTER -->
+<section class="signup">
+  <div class="wrap">
+    <span class="eyebrow" data-en="The List" data-es="La Lista">The List</span>
+    <h2 data-en="Properties before they're public." data-es="Propiedades antes de que sean públicas.">Properties before they're public.</h2>
+    <p class="lede" data-en="A short letter, sent occasionally. New villas, quiet listings, and the occasional sale." data-es="Una carta breve, de vez en cuando. Villas nuevas, propiedades discretas y alguna venta ocasional.">A short letter, sent occasionally. New villas, quiet listings, and the occasional sale.</p>
+
+    <form action="https://2507105d.sibforms.com/serve/MUIFAE7Z4loI5mGe0pkPvUpc_xdTwo3ksyCwkJQckJrWuTbkmKCt7Ny9GBPspI_tGZlkSXYmxKEQXzevRMqnHK_GALjUfF9xq3WKygAW_xdejVq72pgoyjW7nSCZEepV0aeTDRtwCaobXXedhYmiuFQQIZP_uKqZtsLtScdKGe7XT-iK88vnt5kDhKRr_vzB5RhMgeEnnjWaI3HDIA=="
+          method="POST" class="signup-form">
+      <input type="email" name="EMAIL" required placeholder="you@email.com" aria-label="Email">
+      <button type="submit" data-en="Join" data-es="Suscribirme">Join</button>
+      <input type="text" name="email_address_check" value="" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+      <input type="hidden" name="locale" value="en">
+    </form>
+
+    <p class="fineprint" data-en="No more than twice a month. Unsubscribe anytime." data-es="No más de dos veces al mes. Puedes darte de baja cuando quieras.">No more than twice a month. Unsubscribe anytime.</p>
+  </div>
+</section>
 
 <!-- EXPERIENCES -->
 <div class="experiences-section" id="experiences">
