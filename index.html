@@ -56,18 +56,21 @@ nav.scrolled .lang-toggle span { color: var(--main); }
 .lang-toggle span.active { opacity: 1; font-weight: 600; }
 .lang-toggle .sep { opacity: 0.35; cursor: default; }
 
-.signup{background:var(--ink);color:#fff;padding:96px 0;text-align:center}
-.signup .eyebrow{color:var(--mandarina)}
-.signup h2{color:#fff}
-.signup .lede{color:rgba(255,255,255,.78);margin:0 auto;max-width:52ch}
+.signup{background:#1a2e3a;color:#fff;padding:96px 0;text-align:center}
+.signup .eyebrow{color:#E07A3F;font-size:10px;letter-spacing:.28em;text-transform:uppercase;font-weight:700}
+.signup h2{color:#fff;font-family:'Cinzel',Georgia,serif;font-weight:400;
+  font-size:clamp(1.7rem,3.2vw,2.6rem);line-height:1.2;margin:14px 0 26px}
+.signup .lede{color:rgba(255,255,255,.78);font-size:19px;line-height:1.7;margin:0 auto;max-width:52ch}
+.signup .wrap{max-width:1200px;margin:0 auto;padding:0 32px}
 .signup-form{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:40px}
-.signup-form input[type=email]{background:transparent;border:1px solid rgba(255,255,255,.4);color:#fff;
-  padding:16px 20px;font-size:15px;width:340px;max-width:100%;font-family:var(--body)}
+.signup-form input[type=email]{background:transparent;border:1px solid rgba(255,255,255,.4);
+  color:#fff;padding:16px 20px;font-size:15px;width:340px;max-width:100%;
+  font-family:'Helvetica Neue',Helvetica,Arial,sans-serif}
 .signup-form input[type=email]::placeholder{color:rgba(255,255,255,.45)}
-.signup-form input[type=email]:focus{outline:none;border-color:var(--mandarina)}
-.signup-form button{background:var(--mandarina);color:#fff;border:none;cursor:pointer;
-  padding:16px 40px;font-size:11px;letter-spacing:.22em;text-transform:uppercase;
-  font-weight:700;font-family:var(--body);transition:background .3s}
+.signup-form input[type=email]:focus{outline:none;border-color:#E07A3F}
+.signup-form button{background:#E07A3F;color:#fff;border:none;cursor:pointer;padding:16px 40px;
+  font-size:11px;letter-spacing:.22em;text-transform:uppercase;font-weight:700;
+  font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;transition:background .3s}
 .signup-form button:hover{background:#c9662f}
 .signup-form .hp{position:absolute;left:-9999px;width:1px;height:1px;opacity:0}
 .signup .fineprint{margin-top:20px;font-size:12.5px;color:rgba(255,255,255,.5)}
