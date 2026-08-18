@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Thank you — Lushness</title>
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#1a2e3a;
+    --slate:#565555;
+    --bone:#F5F0E8;
+    --mandarina:#E07A3F;
+    --display:'Cinzel',Georgia,serif;
+    --body:'Helvetica Neue',Helvetica,Arial,sans-serif;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{background:var(--ink);color:#fff;font-family:var(--body);line-height:1.6;min-height:100vh}
+
+  .shell{min-height:100vh;display:flex;flex-direction:column}
+  nav{padding:26px 0}
+  .nav-in{max-width:1200px;margin:0 auto;padding:0 32px;display:flex;justify-content:space-between;align-items:center;gap:20px}
+  .brand{font-family:var(--display);font-size:17px;letter-spacing:.3em;color:#fff;text-decoration:none}
+  .lang-toggle{display:flex;gap:6px;font-size:11px;letter-spacing:.12em;color:rgba(255,255,255,.5)}
+  .lang-toggle span[data-lang]{cursor:pointer;transition:color .3s}
+  .lang-toggle span[data-lang]:hover{color:#fff}
+  .lang-toggle span.active{color:#fff;font-weight:700}
+
+  main{flex:1;display:flex;align-items:center;justify-content:center;padding:60px 32px 90px}
+  .card{max-width:640px;text-align:center}
+
+  .mark{width:60px;height:60px;margin:0 auto 34px;border:1px solid var(--mandarina);border-radius:50%;
+    display:flex;align-items:center;justify-content:center}
+  .mark svg{width:24px;height:24px;stroke:var(--mandarina);stroke-width:1.5;fill:none;
+    stroke-linecap:round;stroke-linejoin:round;
+    stroke-dasharray:32;stroke-dashoffset:32;animation:draw .9s .25s ease forwards}
+  @keyframes draw{to{stroke-dashoffset:0}}
+
+  .eyebrow{font-size:10px;letter-spacing:.28em;text-transform:uppercase;color:var(--mandarina);font-weight:700}
+  h1{font-family:var(--display);font-weight:400;font-size:clamp(2rem,4.5vw,3.1rem);line-height:1.15;margin:18px 0 26px}
+  .lede{font-size:18px;line-height:1.72;color:rgba(255,255,255,.8);max-width:48ch;margin:0 auto}
+  .rule{width:74px;height:1px;background:rgba(255,255,255,.28);margin:42px auto}
+  .note{font-size:14.5px;line-height:1.7;color:rgba(255,255,255,.55);max-width:46ch;margin:0 auto}
+
+  .actions{margin-top:44px;display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+  .btn{display:inline-block;text-decoration:none;padding:16px 38px;font-size:11px;
+    letter-spacing:.22em;text-transform:uppercase;font-weight:700;transition:background .3s,transform .3s}
+  .btn-solid{background:var(--mandarina);color:#fff}
+  .btn-solid:hover{background:#c9662f;transform:translateY(-2px)}
+  .btn-ghost{border:1px solid rgba(255,255,255,.4);color:#fff}
+  .btn-ghost:hover{background:rgba(255,255,255,.1);transform:translateY(-2px)}
+
+  footer{padding:26px 0 34px;text-align:center;font-size:12px;color:rgba(255,255,255,.4)}
+  footer a{color:rgba(255,255,255,.6)}
+
+  @media(max-width:600px){
+    .nav-in{padding:0 22px}
+    main{padding:40px 22px 70px}
+    .actions .btn{width:100%}
+  }
+  @media(prefers-reduced-motion:reduce){.mark svg{animation:none;stroke-dashoffset:0}}
+</style>
+</head>
+<body>
+
+<div class="shell">
+
+  <nav>
+    <div class="nav-in">
+      <a href="/" class="brand">LUSHNESS</a>
+      <div class="lang-toggle">
+        <span data-lang="en" class="active">EN</span>/<span data-lang="es">ES</span>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <div class="card">
+      <div class="mark">
+        <svg viewBox="0 0 24 24"><polyline points="4 12.5 9.5 18 20 6.5"/></svg>
+      </div>
+
+      <span class="eyebrow" data-en="You're on the list" data-es="Ya est\u00e1s en la lista">You're on the list</span>
+      <h1 data-en="Welcome to Lushness." data-es="Bienvenido a Lushness.">Welcome to Lushness.</h1>
+
+      <p class="lede" data-en="You'll hear from us when something worth hearing about comes up \u2014 a new villa, a quiet listing, the occasional sale. Not more than twice a month." data-es="Tendr\u00e1s noticias nuestras cuando haya algo que valga la pena contar \u2014 una villa nueva, una propiedad discreta, alguna venta ocasional. No m\u00e1s de dos veces al mes.">You'll hear from us when something worth hearing about comes up — a new villa, a quiet listing, the occasional sale. Not more than twice a month.</p>
+
+      <div class="rule"></div>
+
+      <p class="note" data-en="Check your inbox for a confirmation email. If it isn't there, look in promotions or spam \u2014 and add us to your contacts so we land where we should." data-es="Revisa tu correo para confirmar la suscripci\u00f3n. Si no lo ves, busca en promociones o spam \u2014 y agr\u00e9ganos a tus contactos para que lleguemos donde debemos.">Check your inbox for a confirmation email. If it isn't there, look in promotions or spam — and add us to your contacts so we land where we should.</p>
+
+      <div class="actions">
+        <a class="btn btn-solid" href="/#collection" data-en="See the collection" data-es="Ver la colecci\u00f3n">See the collection</a>
+        <a class="btn btn-ghost" href="/mandarina-sale.html" data-en="Casita La Mandarina \u2014 for sale" data-es="Casita La Mandarina \u2014 en venta">Casita La Mandarina — for sale</a>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <span data-en="Lushness \u00b7 Luxury Rentals &amp; Experiences" data-es="Lushness \u00b7 Rentas y Experiencias de Lujo">Lushness · Luxury Rentals &amp; Experiences</span><br>
+    <a href="https://wa.me/523151300013">WhatsApp +52 315 130 0013</a>
+  </footer>
+
+</div>
+
+<script>
+function setLang(lang){
+  document.documentElement.lang = lang;
+  document.querySelectorAll('[data-en]').forEach(function(el){
+    var val = el.getAttribute('data-' + lang);
+    if (val !== null) el.innerHTML = val;
+  });
+  document.querySelectorAll('.lang-toggle span[data-lang]').forEach(function(s){
+    s.classList.toggle('active', s.getAttribute('data-lang') === lang);
+  });
+  try { localStorage.setItem('lushness-lang', lang); } catch(e){}
+}
+document.querySelectorAll('.lang-toggle span[data-lang]').forEach(function(s){
+  s.addEventListener('click', function(){ setLang(s.getAttribute('data-lang')); });
+});
+try {
+  if (localStorage.getItem('lushness-lang') === 'es') setLang('es');
+} catch(e){}
+</script>
+
+</body>
+</html>
