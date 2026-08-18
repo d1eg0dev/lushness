@@ -404,15 +404,24 @@ footer { padding: 46px 40px; text-align: center; border-top: 1px solid var(--lig
     </div>
   </div>
 </div>
+<!-- ===== SUSCRIPCIÓN ===== -->
+<section class="signup">
+  <div class="signup-wrap">
+    <span class="signup-eyebrow" data-en="The List" data-es="La Lista">The List</span>
+    <h2 class="signup-title" data-en="Properties before they're public." data-es="Propiedades antes de que sean públicas.">Properties before they're public.</h2>
+    <p class="signup-lede" data-en="A short letter, sent occasionally. New villas, quiet listings, and the occasional sale." data-es="Una carta breve, de vez en cuando. Villas nuevas, propiedades discretas y alguna venta ocasional.">A short letter, sent occasionally. New villas, quiet listings, and the occasional sale.</p>
 
-<!-- NEWSLETTER -->
-<form id="signupForm" class="signup-form" novalidate>
-  <input type="email" name="EMAIL" required placeholder="you@email.com" aria-label="Email">
-  <button type="submit" data-en="Join" data-es="Suscribirme">Join</button>
-  <input type="text" name="email_address_check" value="" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
-  <input type="hidden" name="locale" value="en">
-</form>
-<p id="signupMsg" class="signup-msg" role="status"></p>
+    <form id="signupForm" class="signup-form" novalidate>
+      <input type="email" name="EMAIL" required placeholder="you@email.com" aria-label="Email">
+      <button type="submit" data-en="Join" data-es="Suscribirme">Join</button>
+      <input type="text" name="email_address_check" value="" class="signup-hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+      <input type="hidden" name="locale" value="en">
+    </form>
+
+    <p id="signupMsg" class="signup-msg" role="status"></p>
+    <p class="signup-fine" data-en="No more than twice a month. Unsubscribe anytime." data-es="No más de dos veces al mes. Puedes darte de baja cuando quieras.">No more than twice a month. Unsubscribe anytime.</p>
+  </div>
+</section>
 
 <!-- EXPERIENCES -->
 <div class="experiences-section" id="experiences">
