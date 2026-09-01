@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tu casa de campo en Italia · Velletri · Lushness</title>
+<meta name="description" content="Casa de campo entre olivos y viñedos en Velletri, a 40 minutos de Roma y media hora del mar. Para vivir el verano y rentarla el resto del año.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&family=Inter:wght@500;600&display=swap" rel="stylesheet">
+<script>document.documentElement.classList.add('js');</script>
+<style>
+  :root{
+    --bosco:#3a4a26; --bosco-deep:#2b381c; --pietra:#f2eee2; --pietra-2:#e8e2d1;
+    --vino:#7a2836; --vino-deep:#5f1f2b; --oliva:#818e57; --ink:#231f1a; --muted:#6f6a5c;
+    --maxw:1080px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{background:var(--pietra);color:var(--ink);font-family:"Newsreader",Georgia,serif;font-size:19px;line-height:1.65;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 28px}
+  .eyebrow{font-family:"Inter",sans-serif;font-weight:600;font-size:12px;letter-spacing:.22em;text-transform:uppercase}
+  h1,h2,h3{font-weight:400}
+  .m2 sup{font-size:.62em;vertical-align:super}
+
+  /* topbar */
+  .topbar{position:absolute;top:0;left:0;right:0;z-index:5;display:flex;justify-content:space-between;align-items:center;padding:22px 28px;max-width:var(--maxw);margin:0 auto}
+  .brand{font-family:"Fraunces",serif;font-weight:600;letter-spacing:.18em;text-transform:uppercase;font-size:15px;color:var(--pietra)}
+  .brand .dot{color:var(--vino)}
+  .topbar .loc{color:var(--pietra);opacity:.85;font-family:"Inter",sans-serif;font-size:12px;letter-spacing:.14em;text-transform:uppercase}
+
+  /* hero with image */
+  .hero{
+    position:relative;color:var(--pietra);padding:150px 0 74px;overflow:hidden;
+    background-color:var(--bosco-deep);
+    background-image:linear-gradient(180deg, rgba(30,40,18,.62) 0%, rgba(30,40,18,.72) 55%, rgba(30,40,18,.92) 100%),
+      url("images/hero-italy.jpg");
+    background-size:cover;background-position:center;
+  }
+  .hero .eyebrow{color:#cdd6a6;margin-bottom:24px}
+  .hero h1{font-family:"Fraunces",serif;font-size:clamp(46px,8.5vw,92px);line-height:1;letter-spacing:-.015em;color:var(--pietra);max-width:14ch}
+  .hero .tag{font-family:"Newsreader",serif;font-style:italic;font-size:clamp(19px,2.6vw,27px);color:#ece6d3;margin-top:24px;max-width:32ch;text-shadow:0 1px 20px rgba(0,0,0,.35)}
+  .hero-facts{display:flex;flex-wrap:wrap;margin-top:50px;border-top:1px solid rgba(242,238,226,.28);padding-top:26px;max-width:660px}
+  .fact{margin:0 44px 8px 0}
+  .fact .k{font-family:"Inter",sans-serif;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:#c7cf9e}
+  .fact .v{font-family:"Fraunces",serif;font-size:24px;color:var(--pietra);margin-top:4px}
+  .scrollcue{margin-top:50px;display:inline-flex;align-items:center;gap:10px;color:#dcd6c1;font-family:"Inter",sans-serif;font-size:12px;letter-spacing:.16em;text-transform:uppercase;text-decoration:none}
+  .scrollcue .line{width:44px;height:1px;background:var(--oliva);display:inline-block}
+
+  /* video */
+  .film{padding:84px 0}
+  .film .eyebrow{color:var(--vino);text-align:center;display:block;margin-bottom:14px}
+  .film h2{font-family:"Fraunces",serif;font-size:clamp(30px,4.4vw,46px);text-align:center;margin-bottom:38px}
+  .frame{position:relative;width:100%;height:0;padding-top:56.25%;background:var(--bosco-deep);border-radius:3px;overflow:hidden;box-shadow:0 30px 70px -30px rgba(43,56,28,.55)}
+  .frame iframe,.frame video{position:absolute;inset:0;width:100%;height:100%;border:0}
+  .video-placeholder{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:18px;color:var(--pietra);background:radial-gradient(120% 120% at 50% 30%, #45562e, var(--bosco-deep))}
+  .play{width:78px;height:78px;border-radius:50%;border:1.5px solid rgba(242,238,226,.6);display:flex;align-items:center;justify-content:center}
+  .play svg{margin-left:5px}
+  .video-placeholder p{font-family:"Inter",sans-serif;font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;opacity:.82}
+  .film .caption{text-align:center;margin-top:20px;color:var(--muted);font-style:italic;font-size:17px}
+
+  /* zona */
+  .zona{padding:40px 0 86px}
+  .zona .eyebrow{color:var(--vino);display:block;margin-bottom:14px}
+  .zona h2{font-family:"Fraunces",serif;font-size:clamp(30px,4.6vw,48px);max-width:18ch;line-height:1.05}
+  .zona .intro{font-size:20px;color:#3b362d;max-width:60ch;margin-top:22px}
+  .reasons{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--pietra-2);border:1px solid var(--pietra-2);margin-top:44px}
+  .reason{background:var(--pietra);padding:30px 26px}
+  .reason h3{font-family:"Fraunces",serif;font-weight:500;font-size:22px;margin-bottom:9px}
+  .reason p{font-size:16px;color:#4a463d;line-height:1.5}
+  .reason .tick{font-family:"Inter",sans-serif;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--oliva);display:block;margin-bottom:14px}
+
+  /* invest (wine band) */
+  .invest{background:linear-gradient(160deg,#7a2836,var(--vino-deep));color:var(--pietra);padding:88px 0}
+  .invest .eyebrow{color:#e7b7be;display:block;margin-bottom:16px}
+  .invest h2{font-family:"Fraunces",serif;font-size:clamp(30px,4.6vw,48px);max-width:16ch;line-height:1.05}
+  .invest .lead{font-family:"Newsreader",serif;font-style:italic;font-size:22px;color:#f3dfe2;margin-top:20px;max-width:44ch}
+  .points{display:grid;grid-template-columns:repeat(3,1fr);gap:34px;margin-top:52px}
+  .point h3{font-family:"Fraunces",serif;font-weight:500;font-size:21px;margin-bottom:10px;color:#fff}
+  .point p{font-size:16px;line-height:1.55;color:#f0dade}
+  .invest .fine{font-family:"Inter",sans-serif;font-size:12px;letter-spacing:.02em;color:#dcb9be;margin-top:44px;max-width:70ch;line-height:1.5;opacity:.85}
+
+  /* property narrative */
+  .story{padding:70px 0 20px}
+  .movement{display:grid;grid-template-columns:210px 1fr;gap:40px;padding:44px 0;border-top:1px solid var(--pietra-2);transition:opacity .7s ease,transform .7s ease}
+  .js .movement{opacity:0;transform:translateY(18px)}
+  .movement.in{opacity:1;transform:none}
+  .movement .label .eyebrow{color:var(--oliva)}
+  .movement .label .n{font-family:"Fraunces",serif;font-size:15px;color:var(--vino);display:block;margin-top:8px}
+  .movement p{font-size:20px;color:#332e26}
+  .movement p .llead{font-family:"Fraunces",serif;font-size:25px;line-height:1.35;color:var(--ink)}
+
+  /* ficha */
+  .ficha{background:var(--bosco);color:var(--pietra);margin-top:56px;padding:76px 0}
+  .ficha .eyebrow{color:var(--oliva);display:block;margin-bottom:28px}
+  .ficha h2{font-family:"Fraunces",serif;font-size:clamp(28px,4vw,40px);margin-bottom:38px}
+  .spec{display:grid;grid-template-columns:1fr 1fr;gap:0 60px}
+  .row{display:flex;justify-content:space-between;gap:20px;padding:16px 0;border-bottom:1px solid rgba(242,238,226,.16)}
+  .row .k{font-family:"Inter",sans-serif;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--oliva);flex:0 0 auto;padding-top:4px}
+  .row .v{text-align:right;font-family:"Newsreader",serif;font-size:18px;color:var(--pietra)}
+
+  /* price / cta */
+  .close{padding:88px 0;text-align:center}
+  .close .eyebrow{color:var(--vino);display:block;margin-bottom:16px}
+  .price{font-family:"Fraunces",serif;font-size:clamp(52px,10vw,104px);line-height:1;letter-spacing:-.02em}
+  .price .cur{font-size:.34em;vertical-align:super;color:var(--muted);letter-spacing:0;margin-left:8px}
+  .close .sub{color:var(--muted);font-style:italic;margin-top:12px}
+  .cta{display:inline-block;margin-top:36px;font-family:"Inter",sans-serif;font-weight:600;font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--pietra);background:var(--vino);padding:17px 40px;border-radius:2px;text-decoration:none;transition:background .25s ease,transform .25s ease}
+  .cta:hover{background:#8e2f3f;transform:translateY(-2px)}
+  .close .contact{margin-top:24px;color:var(--muted);font-size:16px}
+  .close .contact a{color:var(--ink);text-decoration:none;border-bottom:1px solid var(--pietra-2)}
+
+  footer{background:var(--bosco-deep);color:#cfc9b4;padding:34px 0;text-align:center}
+  footer .brand{color:var(--pietra)}
+  footer .fine{font-family:"Inter",sans-serif;font-size:11.5px;letter-spacing:.1em;margin-top:10px;opacity:.7}
+
+  a:focus-visible,.cta:focus-visible{outline:2px solid var(--oliva);outline-offset:4px}
+  @media (max-width:760px){
+    body{font-size:18px}
+    .reasons{grid-template-columns:1fr}
+    .points{grid-template-columns:1fr;gap:28px}
+    .movement{grid-template-columns:1fr;gap:12px;padding:32px 0}
+    .spec{grid-template-columns:1fr}
+    .topbar .loc{display:none}
+    .hero{padding:130px 0 56px}
+  }
+  @media (prefers-reduced-motion:reduce){
+    html{scroll-behavior:auto}
+    .movement{transition:none;opacity:1;transform:none}
+    .cta{transition:none}
+  }
+</style>
+</head>
+<body>
+
+  <div class="topbar">
+    <div class="brand">Lushness<span class="dot">.</span></div>
+    <div class="loc">Velletri · Lazio · Italia</div>
+  </div>
+
+  <!-- HERO -->
+  <header class="hero">
+    <div class="wrap">
+      <span class="eyebrow">Castelli Romani · Lazio · a 40 min de Roma</span>
+      <h1>Tu casa de campo en Italia</h1>
+      <p class="tag">Entre olivos y viñedos, a media hora del mar y cuarenta minutos de Roma. Para vivir el verano — y rentarla el resto del año.</p>
+      <div class="hero-facts">
+        <div class="fact"><div class="k">Interior</div><div class="v m2">85 m<sup>2</sup></div></div>
+        <div class="fact"><div class="k">Terreno</div><div class="v m2">1.500 m<sup>2</sup></div></div>
+        <div class="fact"><div class="k">Distribución</div><div class="v">2 hab · 1 baño</div></div>
+        <div class="fact"><div class="k">A Roma</div><div class="v">≈ 40 min</div></div>
+      </div>
+      <a class="scrollcue" href="#film"><span class="line"></span>Ver el film</a>
+    </div>
+  </header>
+
+  <!-- VIDEO -->
+  <section class="film" id="film">
+    <div class="wrap">
+      <span class="eyebrow">El film</span>
+      <h2>Un recorrido por la casa y su tierra</h2>
+      <div class="frame">
+        <iframe src="https://www.youtube-nocookie.com/embed/PsdPu2iXYME?rel=0&modestbranding=1"
+                title="Casa de campo en Velletri"
+                loading="lazy"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen></iframe>
+      </div>
+      <p class="caption">Grabado al atardecer, cuando el Lazio da su mejor luz.</p>
+    </div>
+  </section>
+
+  <!-- ZONA -->
+  <section class="zona">
+    <div class="wrap">
+      <span class="eyebrow">Por qué Velletri</span>
+      <h2>No compras una casa: compras una forma de vivir Italia</h2>
+      <p class="intro">A los pies de los Colli Albani, al sur de Roma, Velletri es la puerta de los Castelli Romani: una ciudad viva de unos 50.000 habitantes, con todos los servicios, tren directo a Roma en una hora y el mar a media hora. Su nombre etrusco significaba “lugar donde se cultiva” — y lo sigue honrando.</p>
+      <div class="reasons">
+        <div class="reason"><span class="tick">A un paso de Roma</span><h3>Cerca de todo, lejos del ruido</h3><p>Cuarenta minutos en coche a Roma, o una hora en tren directo a Termini. Media hora al mar. La capital a la mano; el campo para volver.</p></div>
+        <div class="reason"><span class="tick">Tierra de vino</span><h3>Zona vinícola desde época romana</h3><p>El vino DOC de Velletri —blanco, tinto y espumante— y el aceite de oliva extra virgen local son célebres en Roma. Aquí tu propio olivar cobra sentido.</p></div>
+        <div class="reason"><span class="tick">Mesa auténtica</span><h3>Cocina romana, sin turismo</h3><p>Carciofi alla matticella, fettuccine alla velletrana, abbacchio y pizza romana. Los romanos suben cada fin de semana a comer y beber aquí.</p></div>
+        <div class="reason"><span class="tick">Un año de fiestas</span><h3>Vendimia, camelias y alcachofas</h3><p>La Festa dell’Uva e del Vino en septiembre, la Sagra del Carciofo en abril, la Festa delle Camelie en primavera. Vida de pueblo todo el año.</p></div>
+        <div class="reason"><span class="tick">Historia de cine</span><h3>El pueblo de Ugo Tognazzi</h3><p>El gran actor italiano eligió Velletri para su finca “La Tognazza”, un oasis entre olivos y viñedos. Un lugar con alma, no un destino de folleto.</p></div>
+        <div class="reason"><span class="tick">Via Francigena</span><h3>En la ruta a Roma</h3><p>Velletri es paso de la antigua Via Francigena, la ruta de peregrinación de Canterbury a Roma. Historia viva bajo tus pies.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- INVEST -->
+  <section class="invest">
+    <div class="wrap">
+      <span class="eyebrow">Vivir y rentar</span>
+      <h2>Una casa para dos vidas</h2>
+      <p class="lead">Vívela en verano. Que trabaje por ti el resto del año.</p>
+      <div class="points">
+        <div class="point"><h3>Tu verano italiano</h3><p>Pasa las temporadas cálidas entre olivos y viñedos, con Roma y el mar a un paso. Tu refugio, cuando tú quieras.</p></div>
+        <div class="point"><h3>Renta cuando no estés</h3><p>Los romanos llenan los Castelli cada fin de semana; peregrinos y turismo enogastronómico todo el año. Potencial de renta vacacional en Airbnb o Booking mientras no la usas.</p></div>
+        <div class="point"><h3>Desde México, sin complicarte</h3><p>Coordinamos la puesta a punto, la fotografía, el anuncio y la gestión para que la propiedad esté lista para generar desde el primer día.</p></div>
+      </div>
+      <p class="fine">Los ingresos por renta dependen de la temporada, la ocupación, la gestión y la normativa local vigente; se presentan como potencial y no constituyen una garantía de rendimiento.</p>
+    </div>
+  </section>
+
+  <!-- PROPERTY -->
+  <section class="story">
+    <div class="wrap">
+      <article class="movement">
+        <div class="label"><span class="eyebrow">La casa</span><span class="n">El fuego</span></div>
+        <p><span class="llead">85 metros cuadrados en dos plantas.</span> En la planta baja, un amplio espacio abierto reúne cocina y salón alrededor de una chimenea. Arriba, dos habitaciones y un baño para el descanso. Aire acondicionado frío y calor, termoconvector, calefacción a gas y chimenea la hacen un refugio en cualquier estación.</p>
+      </article>
+      <article class="movement">
+        <div class="label"><span class="eyebrow">La tierra</span><span class="n">La abundancia</span></div>
+        <p><span class="llead">Aceite y fruta propios.</span> Un jardín privado y cerrado recibe con un techo de madera para la leña y las herramientas del campo. A pocos metros, 1.500 metros cuadrados de terreno agrícola con diez olivos y diez árboles frutales, y una amplia cochera techada sobre piso de cemento.</p>
+      </article>
+    </div>
+  </section>
+
+  <!-- FICHA -->
+  <section class="ficha">
+    <div class="wrap">
+      <span class="eyebrow">Ficha técnica</span>
+      <h2>Todo lo que necesitas saber</h2>
+      <div class="spec">
+        <div class="row"><span class="k">Ubicación</span><span class="v">Velletri, Castelli Romani (Lazio)</span></div>
+        <div class="row"><span class="k">Superficie</span><span class="v m2">85 m<sup>2</sup> en dos plantas</span></div>
+        <div class="row"><span class="k">Distribución</span><span class="v">2 habitaciones + 1 baño</span></div>
+        <div class="row"><span class="k">Planta baja</span><span class="v">Cocina y salón con chimenea</span></div>
+        <div class="row"><span class="k">Terreno</span><span class="v m2">1.500 m<sup>2</sup> agrícola</span></div>
+        <div class="row"><span class="k">Cultivo</span><span class="v">10 olivos · 10 frutales</span></div>
+        <div class="row"><span class="k">Exterior</span><span class="v">Jardín cerrado · leñera · cochera</span></div>
+        <div class="row"><span class="k">Climatización</span><span class="v">A/C frío-calor · gas · chimenea</span></div>
+        <div class="row"><span class="k">Al mar</span><span class="v">≈ 30 minutos</span></div>
+        <div class="row"><span class="k">A Roma</span><span class="v">≈ 40 min · tren 1 h</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRICE -->
+  <section class="close">
+    <div class="wrap">
+      <span class="eyebrow">Precio de venta</span>
+      <div class="price">175,000<span class="cur">USD</span></div>
+      <p class="sub">Tu casa de campo en Italia, lista para vivir y rentar.</p>
+      <a class="cta" href="mailto:diego@wdstudio.agency?subject=Interes%20en%20casa%20de%20campo%20en%20Velletri">Solicitar información</a>
+      <p class="contact">o escríbenos a <a href="mailto:diego@wdstudio.agency">diego@wdstudio.agency</a> · +52 312 2411693</p>
+    </div>
+  </section>
+
+  <footer>
+    <div class="brand">Lushness<span class="dot" style="color:var(--vino)">.</span></div>
+    <div class="fine">Casa de campo en Velletri · Castelli Romani, Lazio, Italia</div>
+  </footer>
+
+  <script>
+    (function(){
+      var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      var items = document.querySelectorAll('.movement');
+      if(reduce || !('IntersectionObserver' in window)){ items.forEach(function(el){el.classList.add('in')}); return; }
+      var io = new IntersectionObserver(function(entries){
+        entries.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+      },{threshold:0.15});
+      items.forEach(function(el){io.observe(el)});
+    })();
+  </script>
+</body>
+</html>
