@@ -59,6 +59,10 @@
   .spec-row{display:flex;justify-content:space-between;align-items:baseline;gap:24px;padding:15px 0;border-bottom:1px solid var(--hair)}
   .spec-row dt{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--slate);flex-shrink:0}
   .spec-row dd{font-family:var(--display);font-size:15.5px;text-align:right}
+  .gal{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:44px}
+  .gal figure{overflow:hidden;aspect-ratio:3/2;background:var(--hair);margin:0}
+  .gal img{width:100%;height:100%;object-fit:cover;transition:transform 1.1s cubic-bezier(.2,.7,.3,1)}
+  .gal figure:hover img{transform:scale(1.05)}
   .inquire{background:var(--ink);color:#fff;padding:88px 0;text-align:center}
   .inquire .label{color:rgba(255,255,255,.6)}
   .inquire h2{color:#fff;margin:14px 0 10px}
@@ -75,7 +79,8 @@
   .foot p{font-size:12px;color:var(--slate)}
   .reveal{opacity:0;transform:translateY(26px);transition:opacity 1s ease,transform 1s ease}
   .reveal.in{opacity:1;transform:none}
-  @media(max-width:900px){.wrap,.nav-in{padding:0 22px}.nav-links{display:none}section{padding:64px 0}.split{grid-template-columns:1fr;gap:38px}.figures{grid-template-columns:1fr 1fr;gap:20px}}
+  @media(max-width:900px){.wrap,.nav-in{padding:0 22px}.nav-links{display:none}section{padding:64px 0}.split{grid-template-columns:1fr;gap:38px}.figures{grid-template-columns:1fr 1fr;gap:20px}.gal{grid-template-columns:1fr 1fr;gap:10px}}
+  @media(max-width:560px){.gal{grid-template-columns:1fr}}
   @media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}}
 </style>
 </head>
@@ -88,6 +93,7 @@
       <div class="nav-links">
         <a href="/#collection" data-en="Collection" data-es="Colección">Collection</a>
         <a href="#villa" data-en="The Villa" data-es="La Villa">The Villa</a>
+        <a href="#gallery" data-en="Gallery" data-es="Galería">Gallery</a>
         <a href="#setting" data-en="The Setting" data-es="El Entorno">The Setting</a>
         <a href="#inquire" data-en="Inquire" data-es="Contacto">Inquire</a>
       </div>
@@ -97,7 +103,7 @@
 </nav>
 
 <header>
-  <img src="images/ceiba.jpg" alt="Casa La Ceiba, Costa Careyes">
+  <img src="images/casa-la-ceiba/hero.jpg" alt="Casa La Ceiba, Costa Careyes">
   <div class="hero-copy">
     <div class="wrap">
       <a href="/#collection" class="back" data-en="← Back to the collection" data-es="← Volver a la colección">← Back to the collection</a>
@@ -138,6 +144,24 @@
   </div>
 </section>
 
+<!-- GALLERY -->
+<section id="gallery">
+  <div class="wrap reveal">
+    <span class="eyebrow" data-en="Gallery" data-es="Galería">Gallery</span>
+    <h2 data-en="Inside the villa." data-es="Por dentro.">Inside the villa.</h2>
+    <div class="gal">
+      <figure><img loading="lazy" src="images/casa-la-ceiba/01.jpg" alt="Casa La Ceiba"></figure>
+      <figure><img loading="lazy" src="images/casa-la-ceiba/02.jpg" alt="Casa La Ceiba"></figure>
+      <figure><img loading="lazy" src="images/casa-la-ceiba/03.jpg" alt="Casa La Ceiba"></figure>
+      <figure><img loading="lazy" src="images/casa-la-ceiba/04.jpg" alt="Casa La Ceiba"></figure>
+      <figure><img loading="lazy" src="images/casa-la-ceiba/05.jpg" alt="Casa La Ceiba"></figure>
+      <figure><img loading="lazy" src="images/casa-la-ceiba/06.jpg" alt="Casa La Ceiba"></figure>
+      <figure><img loading="lazy" src="images/casa-la-ceiba/07.jpg" alt="Casa La Ceiba"></figure>
+      <figure><img loading="lazy" src="images/casa-la-ceiba/08.jpg" alt="Casa La Ceiba"></figure>
+      <figure><img loading="lazy" src="images/casa-la-ceiba/09.jpg" alt="Casa La Ceiba"></figure>
+    </div>
+  </div>
+</section>
 <!-- SETTING -->
 <section id="setting" class="band">
   <div class="wrap">
