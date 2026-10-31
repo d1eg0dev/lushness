@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Casa Agua Alta — Lushness · Costa Careyes</title>
+<meta name="description" content="Casa Agua Alta — an oceanfront villa in Costa Careyes. Vacation rental by Lushness.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#1a2e3a; --slate:#565555; --bone:#F5F0E8; --paper:#FFFFFF;
+    --mandarina:#E07A3F; --hair:#DDD5C9;
+    --display:'Cinzel',Georgia,serif; --body:'Helvetica Neue',Helvetica,Arial,sans-serif;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{background:var(--bone);color:var(--ink);font-family:var(--body);-webkit-font-smoothing:antialiased;line-height:1.6}
+  img{display:block;width:100%;height:auto}
+  a{color:inherit}
+  .wrap{max-width:1200px;margin:0 auto;padding:0 32px}
+  .eyebrow{font-size:10px;letter-spacing:.28em;text-transform:uppercase;color:var(--mandarina);font-weight:700}
+  .label{font-size:10px;letter-spacing:.24em;text-transform:uppercase;color:var(--slate)}
+  nav{position:fixed;top:0;left:0;right:0;z-index:60;padding:22px 0;transition:background .4s ease,padding .4s ease}
+  nav.scrolled{background:rgba(26,46,58,.96);padding:14px 0;backdrop-filter:blur(8px)}
+  .nav-in{max-width:1200px;margin:0 auto;padding:0 32px;display:flex;justify-content:space-between;align-items:center;gap:24px}
+  .brand{font-family:var(--display);font-size:17px;letter-spacing:.3em;color:#fff;text-decoration:none}
+  .nav-right{display:flex;align-items:center;gap:32px}
+  .nav-links{display:flex;gap:30px}
+  .nav-links a{font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.82);text-decoration:none;transition:color .3s}
+  .nav-links a:hover{color:#fff}
+  .lang-toggle{display:flex;align-items:center;gap:6px;font-size:11px;letter-spacing:.12em;color:rgba(255,255,255,.55)}
+  .lang-toggle span[data-lang]{cursor:pointer;transition:color .3s}
+  .lang-toggle span[data-lang]:hover{color:#fff}
+  .lang-toggle span.active{color:#fff;font-weight:700}
+  header{position:relative;height:88vh;min-height:540px;background:var(--ink);overflow:hidden}
+  header img{position:absolute;inset:0;height:100%;object-fit:cover;opacity:.82}
+  header::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(26,46,58,.5) 0%,rgba(26,46,58,.08) 40%,rgba(26,46,58,.9) 100%)}
+  .hero-copy{position:absolute;left:0;right:0;bottom:0;z-index:2;padding-bottom:64px}
+  .back{display:inline-block;margin-bottom:22px;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.72);text-decoration:none;transition:color .3s}
+  .back:hover{color:#fff}
+  .hero-tag{display:inline-block;border:1px solid rgba(255,255,255,.5);padding:7px 16px;font-size:10px;letter-spacing:.24em;text-transform:uppercase;color:#fff;margin-bottom:24px}
+  .hero-copy h1{font-family:var(--display);font-weight:400;color:#fff;font-size:clamp(2.3rem,6vw,4.6rem);line-height:1.05}
+  .hero-meta{margin-top:18px;display:flex;flex-wrap:wrap;gap:10px 26px;color:rgba(255,255,255,.88);font-size:12px;letter-spacing:.14em;text-transform:uppercase}
+  section{padding:96px 0}
+  .band{background:var(--paper)}
+  h2{font-family:var(--display);font-weight:400;font-size:clamp(1.7rem,3.2vw,2.6rem);line-height:1.2;margin:14px 0 26px}
+  .lede{font-size:19px;line-height:1.72;color:var(--slate);max-width:62ch}
+  .body-text{font-size:16px;line-height:1.8;color:var(--slate);max-width:62ch}
+  .body-text + .body-text{margin-top:18px}
+  .specs{border-top:2px solid var(--ink);margin-top:30px;max-width:640px}
+  .spec-row{display:flex;justify-content:space-between;align-items:baseline;gap:24px;padding:15px 0;border-bottom:1px solid var(--hair)}
+  .spec-row dt{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--slate);flex-shrink:0}
+  .spec-row dd{font-family:var(--display);font-size:15.5px;text-align:right}
+  .inquire{background:var(--ink);color:#fff;padding:88px 0;text-align:center}
+  .inquire .label{color:rgba(255,255,255,.6)}
+  .inquire h2{color:#fff;margin:14px 0 10px}
+  .inquire p.sub{color:rgba(255,255,255,.72);font-size:16px;max-width:46ch;margin:0 auto 34px}
+  .btn{display:inline-block;background:var(--mandarina);color:#fff;text-decoration:none;padding:17px 44px;font-size:11px;letter-spacing:.22em;text-transform:uppercase;font-weight:700;transition:background .3s,transform .3s}
+  .btn:hover{background:#c9662f;transform:translateY(-2px)}
+  .btn-ghost{background:transparent;border:1px solid rgba(255,255,255,.45)}
+  .btn-ghost:hover{background:rgba(255,255,255,.1)}
+  .btn-row{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+  footer{background:var(--bone);padding:52px 0;border-top:1px solid var(--hair)}
+  .foot{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:18px}
+  .foot a{text-decoration:none}
+  .fbrand{font-family:var(--display);letter-spacing:.3em;font-size:14px}
+  .foot p{font-size:12px;color:var(--slate)}
+  .reveal{opacity:0;transform:translateY(26px);transition:opacity 1s ease,transform 1s ease}
+  .reveal.in{opacity:1;transform:none}
+  @media(max-width:900px){.wrap,.nav-in{padding:0 22px}.nav-links{display:none}section{padding:64px 0}}
+  @media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}}
+</style>
+</head>
+<body>
+
+<nav id="nav">
+  <div class="nav-in">
+    <a href="/" class="brand">LUSHNESS</a>
+    <div class="nav-right">
+      <div class="nav-links">
+        <a href="/#collection" data-en="Collection" data-es="Colección">Collection</a>
+        <a href="#villa" data-en="The Villa" data-es="La Villa">The Villa</a>
+        <a href="#setting" data-en="The Setting" data-es="El Entorno">The Setting</a>
+        <a href="#inquire" data-en="Inquire" data-es="Contacto">Inquire</a>
+      </div>
+      <div class="lang-toggle"><span data-lang="en" class="active">EN</span>/<span data-lang="es">ES</span></div>
+    </div>
+  </div>
+</nav>
+
+<header>
+  <img src="images/aguaalta.jpg" alt="Casa Agua Alta, Costa Careyes">
+  <div class="hero-copy">
+    <div class="wrap">
+      <a href="/#collection" class="back" data-en="← Back to the collection" data-es="← Volver a la colección">← Back to the collection</a>
+      <div><span class="hero-tag" data-en="Vacation Rental" data-es="Renta Vacacional">Vacation Rental</span></div>
+      <h1>Casa Agua Alta</h1>
+      <div class="hero-meta">
+        <span>Costa Careyes · Jalisco</span>
+        <span>Oceanfront</span></div>
+    </div>
+  </div>
+</header>
+
+<!-- OVERVIEW -->
+<section class="band">
+  <div class="wrap reveal">
+    <span class="eyebrow" data-en="The Villa" data-es="La Villa">The Villa</span>
+    <h2 data-en="Suspended between jungle and sea." data-es="Suspendida entre selva y mar.">Suspended between jungle and sea.</h2>
+    <p class="lede" data-en="A villa perched above the Pacific, where the living spaces open straight to the horizon." data-es="Una villa sobre el Pacífico, donde los espacios de estar abren directo al horizonte.">A villa perched above the Pacific, where the living spaces open straight to the horizon.</p>
+    <p class="body-text" style="margin-top:24px" data-en="Casa Agua Alta pairs open, airy interiors with total privacy — a house that feels suspended between the jungle and the sea." data-es="Casa Agua Alta combina interiores abiertos y luminosos con privacidad total — una casa que se siente suspendida entre la selva y el mar.">Casa Agua Alta pairs open, airy interiors with total privacy — a house that feels suspended between the jungle and the sea.</p>
+    <p class="body-text" data-en="Floor plans, capacity and availability are shared on request. Tell us your dates and what you have in mind." data-es="Planos, capacidad y disponibilidad se comparten bajo petición. Cuéntanos tus fechas y qué tienes en mente.">Floor plans, capacity and availability are shared on request. Tell us your dates and what you have in mind.</p>
+  </div>
+</section>
+
+<!-- VILLA / SPECS -->
+<section id="villa">
+  <div class="wrap reveal">
+    <span class="eyebrow" data-en="At a glance" data-es="En breve">At a glance</span>
+    <h2 data-en="At a glance." data-es="En breve.">At a glance.</h2>
+    <dl class="specs">
+      <div class="spec-row"><dt data-en="Setting" data-es="Entorno">Setting</dt><dd data-en="Oceanfront, above the Pacific" data-es="Frente al mar, sobre el Pacífico">Oceanfront, above the Pacific</dd></div>
+      <div class="spec-row"><dt data-en="Interiors" data-es="Interiores">Interiors</dt><dd data-en="Open living spaces" data-es="Espacios abiertos">Open living spaces</dd></div>
+      <div class="spec-row"><dt data-en="Privacy" data-es="Privacidad">Privacy</dt><dd data-en="Total" data-es="Total">Total</dd></div>
+      <div class="spec-row"><dt data-en="Availability" data-es="Disponibilidad">Availability</dt><dd data-en="On request" data-es="Bajo petición">On request</dd></div>
+    </dl>
+  </div>
+</section>
+
+<!-- SETTING -->
+<section id="setting" class="band">
+  <div class="wrap reveal" style="max-width:820px">
+    <span class="eyebrow" data-en="The Setting" data-es="El Entorno">The Setting</span>
+    <h2 data-en="Costa Careyes, since 1968." data-es="Costa Careyes, desde 1968.">Costa Careyes, since 1968.</h2>
+    <p class="body-text" data-en="Careyes is a private community on Mexico's Pacific coast, founded in 1968 — architecture, art and the ocean conceived as one. Reached by jungle road and private gates, roughly 90 minutes from Manzanillo International Airport, it keeps the outside world at a comfortable distance." data-es="Careyes es una comunidad privada en la costa del Pacífico de México, fundada en 1968 — arquitectura, arte y océano concebidos como una sola cosa. Se llega por camino de selva y puertas privadas, a unos 90 minutos del Aeropuerto Internacional de Manzanillo, manteniendo al mundo exterior a una distancia cómoda.">Careyes is a private community on Mexico's Pacific coast, founded in 1968 — architecture, art and the ocean conceived as one. Reached by jungle road and private gates, roughly 90 minutes from Manzanillo International Airport, it keeps the outside world at a comfortable distance.</p>
+  </div>
+</section>
+
+<!-- INQUIRE -->
+<div class="inquire" id="inquire">
+  <div class="wrap reveal">
+    <span class="label" data-en="Inquire" data-es="Consultar">Inquire</span>
+    <h2 data-en="Enquire about Casa Agua Alta" data-es="Consulta por Casa Agua Alta">Enquire about Casa Agua Alta</h2>
+    <p class="sub" data-en="Tell us your dates and what you're planning — we'll take care of the rest." data-es="Cuéntanos tus fechas y qué estás planeando — nosotros nos encargamos del resto.">Tell us your dates and what you're planning — we'll take care of the rest.</p>
+    <div class="btn-row">
+      <a class="btn" href="https://wa.me/523151300013?text=Hola%2C%20me%20interesa%20Casa%20Agua%20Alta" target="_blank" rel="noopener" data-en="WhatsApp" data-es="WhatsApp">WhatsApp</a>
+      <a class="btn btn-ghost" href="mailto:lushnessluxuryrentals@gmail.com?subject=Casa%20Agua%20Alta%20%E2%80%94%20Lushness" data-en="Email us" data-es="Escríbenos">Email us</a>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="wrap foot">
+    <a href="/" class="fbrand">LUSHNESS</a>
+    <p>Diego Larios · <a href="https://wa.me/523151300013">WhatsApp +52 315 130 0013</a> · lushnessluxuryrentals.com</p>
+  </div>
+</footer>
+
+<script>
+window.addEventListener('scroll', function(){ document.getElementById('nav').classList.toggle('scrolled', window.scrollY > 60); });
+function setLang(lang){
+  document.documentElement.lang = lang;
+  document.querySelectorAll('[data-en]').forEach(function(el){ var v = el.getAttribute('data-'+lang); if(v!==null) el.textContent = v; });
+  document.querySelectorAll('.lang-toggle span[data-lang]').forEach(function(s){ s.classList.toggle('active', s.getAttribute('data-lang')===lang); });
+  try { localStorage.setItem('lushness-lang', lang); } catch(e){}
+}
+document.querySelectorAll('.lang-toggle span[data-lang]').forEach(function(s){ s.addEventListener('click', function(){ setLang(s.getAttribute('data-lang')); }); });
+try { if (localStorage.getItem('lushness-lang') === 'es') setLang('es'); } catch(e){}
+var pr = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+if (!pr && 'IntersectionObserver' in window) {
+  var obs = new IntersectionObserver(function(entries){ entries.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); obs.unobserve(e.target); } }); }, { threshold: 0.12 });
+  document.querySelectorAll('.reveal').forEach(function(el){ obs.observe(el); });
+} else { document.querySelectorAll('.reveal').forEach(function(el){ el.classList.add('in'); }); }
+</script>
+</body>
+</html>
